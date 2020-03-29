@@ -13,6 +13,7 @@ import { TopNavComponent } from './top-nav/top-nav.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { DetailComponent } from './detail/detail.component';
 import { AccountComponent } from './account/account.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AccountComponent } from './account/account.component';
     TopNavComponent,
     PrincipalComponent,
     DetailComponent,
-    AccountComponent
+    AccountComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
