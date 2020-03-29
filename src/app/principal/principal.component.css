@@ -1,0 +1,11 @@
+.productsWrapper{
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+}
+
+.itemWrapper{
+    border: 2px solid black;
+    text-align: center;
+    padding: 2em;
+    margin: 1em;
+}
