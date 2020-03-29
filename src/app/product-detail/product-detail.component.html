@@ -1,1 +1,22 @@
-<p>product-detail works!</p>
+<div class="wrapper">
+    <div class="images">
+        <img src='http://localhost:3000{{product.product[0].image_1}}'>
+        <img src='http://localhost:3000{{product.product[0].image_2}}'>
+        <img src='http://localhost:3000{{product.product[0].image_3}}'>
+    </div>
+    <div class="description">
+        <h1>{{product.product[0].title}}</h1>
+        <p>{{product.product[0].price}} €</p>
+        <p>{{product.product[0].description}}</p>
+        <label>SELECT NUMBER</label>
+        <select>
+            <option *ngFor="let item of product.sizes" value={{item.number}}>{{item.number}} -- {{item.quantity}} units
+                left
+            </option>
+        </select>
+        <div>
+            <button>ADD TO CART</button>
+        </div>
+
+    </div>
+</div>
