@@ -7,14 +7,14 @@
         </div>
         <div class="content">
             <div class="headerContent">
-                <div>
+                <div [routerLink]="['tab-personal-information']" routerLinkActive="router-link-active">
                     <p>PERSONAL INFORMATION</p>
                 </div>
-                <div>
+                <div [routerLink]="['tab-orders']">
                     <p>ORDER HISTORY</p>
                 </div>
             </div>
         </div>
-        <!-- Aqui van los componentes hijos -->
+        <router-outlet></router-outlet>
     </div>
 </div>

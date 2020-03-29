@@ -54,7 +54,6 @@
 
 .content{
     display: flex;
-    height: 100vh;
 }
 
 .headerContent{
@@ -76,6 +75,16 @@
 }
 
 .headerContent div:hover{
+    background-color: #FF0000;
+    color: white;
+}
+
+.headerContent div:active{
+    background-color: #FF0000;
+    color: white;
+}
+
+.headerContent div:focus{
     background-color: #FF0000;
     color: white;
 }

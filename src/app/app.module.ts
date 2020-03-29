@@ -14,6 +14,8 @@ import { PrincipalComponent } from './principal/principal.component';
 import { DetailComponent } from './detail/detail.component';
 import { AccountComponent } from './account/account.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { TabPersonalInformationComponent } from './account/tab-personal-information/tab-personal-information.component';
+import { TabOrdersComponent } from './account/tab-orders/tab-orders.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     PrincipalComponent,
     DetailComponent,
     AccountComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    TabPersonalInformationComponent,
+    TabOrdersComponent
   ],
   imports: [
     BrowserModule,
