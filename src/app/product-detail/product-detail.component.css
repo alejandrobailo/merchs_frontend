@@ -1,0 +1,15 @@
+.wrapper {
+    padding-top: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+}
+
+.images {
+    width: 50%;
+}
+
+.description {
+    width: 50%;
+    text-align: center;
+}

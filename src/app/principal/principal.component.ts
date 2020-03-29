@@ -11,13 +11,12 @@ export class PrincipalComponent implements OnInit {
 
   arrProducts: any[];
 
-  constructor(private productService: ProductService, private router: Router) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.productService.getAll()
       .then(response => {
         this.arrProducts = response;
-        console.log(this.arrProducts);
       })
       .catch(err => {
         console.log(err);
