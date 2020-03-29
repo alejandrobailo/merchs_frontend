@@ -12,13 +12,15 @@ import { ProductService } from './product.service';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { DetailComponent } from './detail/detail.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopNavComponent,
     PrincipalComponent,
-    DetailComponent
+    DetailComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

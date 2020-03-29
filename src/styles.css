@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url('https://fonts.googleapis.com/css?family=Inria+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -57,4 +57,4 @@ img{
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Inria Sans', Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Nunito', Roboto, "Helvetica Neue", sans-serif; }

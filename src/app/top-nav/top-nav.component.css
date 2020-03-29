@@ -34,12 +34,13 @@
 }
 
 .navItem button{
-    color: azure;
+    color: black;
     font-weight: bold;
 }
 
 .navLogo{
     margin-top: 2em;
+    width: 20%;
 }
 
 .navButton{
@@ -51,7 +52,7 @@
 }
 
 .navButton:hover{
-    border-bottom: 2px solid azure;
+    border-bottom: 2px solid black;
     padding-bottom: .5em;
     transition: all 0.1;
 }

@@ -11,11 +11,23 @@
     position: absolute;
     text-align: center;
     width: 100%;
-    font-size: 4vw;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    color: azure;
+    font-size: 50px;
+    font-family: Arial-Black,sans-serif;
+    font-size: 4vw;
+    letter-spacing: .04px;
+    color: hsla(0,0%,100%,0);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fff;
+    text-transform: uppercase;
+    transition: all .5s;
+}
+
+.initialMessage:hover{
+    color: hsla(0,0%,100%,.9);
+
 }
 
 .productsWrapper{

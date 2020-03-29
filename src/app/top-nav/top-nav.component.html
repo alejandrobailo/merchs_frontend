@@ -24,7 +24,7 @@
     </nav>
     <li class="navItem navLogo">
         <a href="#">
-            <img src="../../assets/images/logokanala.png" alt="LOGO">
+            <img class="logo" src="../../assets/images/logo-transparent.png" alt="LOGO">
         </a>
     </li>
     <nav class="navWrapper">
@@ -36,7 +36,7 @@
             </mat-menu>
         </li>
         <li class="navItem">
-            <button class="navButton" class="navButton" mat-button [matMenuTriggerFor]="menu">ACCOUNT</button>
+            <button class="navButton" class="navButton" mat-button [matMenuTriggerFor]="menu" [routerLink]="['/account']" routerLinkActive="router-link-active">ACCOUNT</button>
             <mat-menu #menu="matMenu">
                 <button mat-menu-item>Item 1</button>
                 <button mat-menu-item>Item 2</button>
