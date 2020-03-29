@@ -1,0 +1,47 @@
+.flexForms{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 3em;
+}
+
+.flexForms form{
+    width: 32%;
+    background-color: #F9F9F9;
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.flexForms form h3{
+    text-align: center;
+    font-weight: bolder;
+    margin: 2em 0;
+}
+
+.flexForms form input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #e6e6e6;
+    border-radius: 0;
+    height: 50px;
+    padding: 0 10px;
+    letter-spacing: .4px;
+    outline: none;
+    width: 80%;
+    margin: .5em auto;
+}
+
+.flexForms form p{
+    width: 80%;
+    margin: .5em auto;
+    font-size: 12px;
+}
+
+.flexForms form input.submit{
+    border: none;
+    border-bottom: 2px solid black;
+    width: 20%;
+}
