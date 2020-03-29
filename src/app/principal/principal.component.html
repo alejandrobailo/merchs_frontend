@@ -5,9 +5,10 @@
 </div>
 
 <div class="productsWrapper">
-    <div class="itemWrapper" *ngFor="let item of arrProducts">
-        <img src="" alt="">
-        <p><strong>{{item.title}}</strong></p>
-        <p>{{item.price}} €</p>
+    <div class="itemWrapper" *ngFor="let product of arrProducts">
+        <img src='http://localhost:3000{{product.image_1}}'>
+        <p><strong>{{product.title}}</strong></p>
+        <p>{{product.price}} €</p>
+        <button class="btnAddToCart" [routerLink]="['/product', product.sku]">ADD TO CART</button>
     </div>
 </div>

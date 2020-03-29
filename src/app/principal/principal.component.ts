@@ -17,11 +17,11 @@ export class PrincipalComponent implements OnInit {
     this.productService.getAll()
       .then(response => {
         this.arrProducts = response;
-        console.log(response);
+        console.log(this.arrProducts);
       })
       .catch(err => {
         console.log(err);
-      })
+      });
   }
 
 }
