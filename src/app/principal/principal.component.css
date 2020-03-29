@@ -1,3 +1,23 @@
+.wrapper{
+    position: relative;
+    height: 100vh;
+    background-image: url(https://lebonnet.imgix.net/uploads/cq_slider/slide/image/33/LB_desktop_slide1.jpg?auto=compress,format&w=2800);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.initialMessage{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-size: 4vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    color: azure;
+}
+
 .productsWrapper{
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
