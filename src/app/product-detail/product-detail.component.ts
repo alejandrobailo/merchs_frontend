@@ -10,14 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductDetailComponent implements OnInit {
 
   product: any;
+  size: number;
 
   constructor(private productService: ProductService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(async params => {
       this.product = await this.productService.getById(parseInt(params.id, 10));
-      console.log(this.product);
     });
+  }
+
+  handleSelectSize(event) {
+    return this.size = event.target.value;
+  }
+
+  handleAddToCart(sku, size) {
+    console.log('sku:', sku, 'size:', size);
   }
 
 }
