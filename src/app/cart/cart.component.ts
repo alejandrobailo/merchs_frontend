@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../product.service';
+import { OrdersService } from '../orders.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -9,9 +12,9 @@ export class CartComponent implements OnInit {
 
   cart: [];
 
-  constructor() { }
+  constructor(private productService: ProductService, private orderService: OrdersService, private router: Router) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.cart = JSON.parse(localStorage.getItem('cart'));
   }
 
@@ -28,6 +31,7 @@ export class CartComponent implements OnInit {
 
   incrementQuantity(sku) {
     const prod: any = this.cart.find(item => item['sku'] === sku);
+    // Habría que poner un tope de unidades máximas pero el getAll de la API no trae las cantidades de cada número. Mejorarlo cuand tengamos tiempo.
     prod.quantity = prod.quantity + 1;
     localStorage.setItem('cart', JSON.stringify(this.cart));
   }
@@ -44,6 +48,13 @@ export class CartComponent implements OnInit {
       total += item['price'] * item['quantity'];
     }
     return total;
+  }
+
+  generateOrder() {
+    this.cart = JSON.parse(localStorage.getItem('cart'));
+    this.orderService.createOrder(this.cart);
+    localStorage.removeItem('cart');
+    this.router.navigate(['/']);
   }
 
 }

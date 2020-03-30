@@ -27,7 +27,7 @@ export class ProductDetailComponent implements OnInit {
 
   handleAddToCart(pSku, pSize) {
     const newCartItem = {
-      customerId: 1,
+      customerId: localStorage.getItem('CustomerIdKanala'),
       sku: pSku,
       size: pSize,
       quantity: 1,

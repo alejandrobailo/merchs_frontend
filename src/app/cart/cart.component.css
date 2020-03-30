@@ -64,3 +64,27 @@
     font-size: 20px;
     padding: 0px 30px;
 }
+
+.total {
+    position: absolute;
+    right: 0;
+    padding-right: 200px;
+    padding-top: 20px;
+}
+
+.checkout button {
+    width: 30%;
+    margin-top: 50px;
+    font-size: 20px;
+    border: 1px solid red;
+    font-family: "Arial-Black" ,sans-serif;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fb3737;
+}
+
+.checkout button:hover {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { OrdersService } from '../orders.service';
+import { OrdersService } from '../../orders.service';
 
 @Component({
   selector: 'app-tab-personal-information',
