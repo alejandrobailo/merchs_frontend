@@ -18,6 +18,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { TabPersonalInformationComponent } from './account/tab-personal-information/tab-personal-information.component';
 import { TabOrdersComponent } from './account/tab-orders/tab-orders.component';
 import { CartComponent } from './cart/cart.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CartComponent } from './cart/cart.component';
     ProductDetailComponent,
     TabPersonalInformationComponent,
     TabOrdersComponent,
-    CartComponent
+    CartComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

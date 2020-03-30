@@ -6,11 +6,14 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { TabOrdersComponent } from './account/tab-orders/tab-orders.component';
 import { TabPersonalInformationComponent } from './account/tab-personal-information/tab-personal-information.component';
 import { CartComponent } from './cart/cart.component';
+import { LoginComponent } from './login/login.component';
+import { LoginGuard } from './login.guard';
 
 const routes: Routes = [
   { path: '', component: PrincipalComponent },
+  { path: 'login', component: LoginComponent },
   {
-    path: 'account', component: AccountComponent, children: [
+    path: 'account', component: AccountComponent, canActivate: [LoginGuard], children: [
       {
         path: 'tab-orders', component: TabOrdersComponent,
       },

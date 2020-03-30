@@ -1,0 +1,22 @@
+<div class="wrapper">
+    <div class="flexWrapper">
+        <div class="login">
+            <h2>REGISTERED CUSTOMERS</h2>
+            <form [formGroup]="formLogin" (ngSubmit)="submitLogin()">
+                <input type="email" formControlName="email">
+                <input type="password" formControlName="password">
+                <input type="submit" value="LOG IN" class="submitLogin">
+                <a href="">Forget password?</a>
+            </form>
+        </div>
+        <div class="register">
+            <h2>NEW CUSTOMER</h2>
+            <form [formGroup]="formRegister" (ngSubmit)="register()">
+                <input type="email" formControlName="email">
+                <input type="password" formControlName="password">
+                <input type="password" formControlName="passwordRepeat">
+                <input type="submit" value="RESGISTER">
+            </form>
+        </div>
+    </div>
+</div>
