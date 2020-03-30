@@ -1,25 +1,28 @@
 <div class="topWrapper">
     <nav class="navWrapper">
         <li class="navItem">
-            <button class="navButton" mat-button [matMenuTriggerFor]="menu">ALL</button>
+            <button class="navButton">ALL</button>
+            <!-- <button class="navButton" mat-button [matMenuTriggerFor]="menu">ALL</button>
             <mat-menu #menu="matMenu">
                 <button mat-menu-item>Item 1</button>
                 <button mat-menu-item>Item 2</button>
-            </mat-menu>
+            </mat-menu> -->
         </li>
         <li class="navItem">
-            <button class="navButton" mat-button [matMenuTriggerFor]="menu">SHOES</button>
+            <button class="navButton">SHOES</button>
+            <!-- <button class="navButton" mat-button [matMenuTriggerFor]="menu">SHOES</button>
             <mat-menu #menu="matMenu">
                 <button mat-menu-item>Item 1</button>
                 <button mat-menu-item>Item 2</button>
-            </mat-menu>
+            </mat-menu> -->
         </li>
         <li class="navItem">
-            <button class="navButton" mat-button [matMenuTriggerFor]="menu">BAGS</button>
+            <button class="navButton">BAGS</button>
+            <!-- <button class="navButton" mat-button [matMenuTriggerFor]="menu">BAGS</button>
             <mat-menu #menu="matMenu">
                 <button mat-menu-item>Item 1</button>
                 <button mat-menu-item>Item 2</button>
-            </mat-menu>
+            </mat-menu> -->
         </li>
     </nav>
     <li class="navItem navLogo">
@@ -29,25 +32,28 @@
     </li>
     <nav class="navWrapper">
         <li class="navItem">
-            <button class="navButton" mat-button [matMenuTriggerFor]="menu">OUR WORLD</button>
+            <button class="navButton">OUR WORLD</button>
+            <!-- <button class="navButton" mat-button [matMenuTriggerFor]="menu">OUR WORLD</button>
             <mat-menu #menu="matMenu">
                 <button mat-menu-item>Item 1</button>
                 <button mat-menu-item>Item 2</button>
-            </mat-menu>
+            </mat-menu> -->
         </li>
         <li class="navItem">
-            <button class="navButton" class="navButton" mat-button [matMenuTriggerFor]="menu" [routerLink]="['/account']" routerLinkActive="router-link-active">ACCOUNT</button>
+            <button class="navButton" [routerLink]="['/account']" routerLinkActive="router-link-active">ACCOUNT</button>
+            <!-- <button class="navButton" class="navButton" mat-button [matMenuTriggerFor]="menu">ACCOUNT</button>
             <mat-menu #menu="matMenu">
                 <button mat-menu-item>Item 1</button>
                 <button mat-menu-item>Item 2</button>
-            </mat-menu>
+            </mat-menu> -->
         </li>
         <li class="navItem">
-            <button class="navButton" mat-button [matMenuTriggerFor]="menu">CART</button>
+            <button class="navButton" [routerLink]="['/cart']">CART</button>
+            <!-- <button class="navButton" mat-button [matMenuTriggerFor]="menu">CART</button>
             <mat-menu #menu="matMenu">
                 <button mat-menu-item>Item 1</button>
                 <button mat-menu-item>Item 2</button>
-            </mat-menu>
+            </mat-menu> -->
         </li>
     </nav>
 </div>

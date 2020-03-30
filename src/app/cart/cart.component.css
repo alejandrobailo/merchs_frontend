@@ -1,0 +1,66 @@
+.wrapper {
+    padding-top: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.title {
+    height: 20px;
+    border-bottom: 1px solid red;
+    padding: 40px 30px;
+    font-family: "Arial-Black" ,sans-serif;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fb3737;
+    text-transform: uppercase;
+    font-size: 35px;
+}
+
+.items {
+    padding: 20px 30px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #E1E8EE;
+}
+
+.items .image {
+    width: 125px;
+}
+
+.buttons {
+    position: relative;
+    padding-top: 30px;
+    margin-right: 60px;
+}
+
+.delete-btn {
+    display: inline-block;
+    border: none;
+}
+
+.delete-btn:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.quantity button {
+    border: none;
+    background-color: #ccc;
+    border-radius: 10px;
+    color: white;
+}
+
+.quantity button:hover {
+    cursor: pointer;
+}
+
+.quantityInput {
+    width: 30px;
+    border: none;
+    font-size: 20px;
+    padding: 0px 30px;
+}

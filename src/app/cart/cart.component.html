@@ -1,0 +1,41 @@
+<div class="wrapper">
+    <div class="title">
+        Shopping Cart
+    </div>
+    <div class="items" *ngFor="let item of cart">
+        <div class="delete">
+            <button class="delete-btn" (click)="deleteItemFromCart(item.sku)"><span
+                    class="material-icons">clear</span></button>
+        </div>
+
+        <div class="image">
+            <img src={{item.image}}>
+        </div>
+
+        <div class="description">
+            <p>{{item.title}}</p>
+        </div>
+
+        <div class="price">
+            <p>{{item.price}} €</p>
+        </div>
+
+        <div class="size">
+            <p>Size: {{item.size}}</p>
+        </div>
+
+        <div class="quantity">
+            <button class="minus-btn" (click)="decrementQuantity(item.sku)"><span
+                    class="material-icons">remove</span></button>
+            <input type="text" class="quantityInput" value={{item.quantity}}>
+            <button class="plus-btn" (click)="incrementQuantity(item.sku)"><span
+                    class="material-icons">add</span></button>
+        </div>
+
+        <div class="subtotal">{{item.price * item.quantity}} €</div>
+    </div>
+
+    <div class="total">
+        <p>{{calculateTotal()}} €</p>
+    </div>
+</div>

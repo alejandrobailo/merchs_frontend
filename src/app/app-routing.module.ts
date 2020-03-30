@@ -5,6 +5,7 @@ import { PrincipalComponent } from './principal/principal.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { TabOrdersComponent } from './account/tab-orders/tab-orders.component';
 import { TabPersonalInformationComponent } from './account/tab-personal-information/tab-personal-information.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   { path: '', component: PrincipalComponent },
@@ -18,7 +19,8 @@ const routes: Routes = [
       }
     ]
   },
-  { path: 'product/:id', component: ProductDetailComponent }
+  { path: 'product/:id', component: ProductDetailComponent },
+  { path: 'cart', component: CartComponent }
 ];
 
 @NgModule({
