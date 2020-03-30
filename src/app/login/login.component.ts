@@ -33,12 +33,12 @@ export class LoginComponent implements OnInit {
   async submitLogin() {
     try {
       localStorage.removeItem('token');
-      localStorage.removeItem('CustomerIdKanala')
+      localStorage.removeItem('customerIdKanala')
 
       const result = await this.customersService.login(this.formLogin.value);
 
       localStorage.setItem('token', result.success);
-      localStorage.setItem('CustomerIdKanala', result.customerId)
+      localStorage.setItem('customerIdKanala', result.customerId)
 
       this.router.navigate(['/'])
     } catch (error) {

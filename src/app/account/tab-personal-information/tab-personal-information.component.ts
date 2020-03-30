@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+<<<<<<< HEAD
 import { OrdersService } from '../../orders.service';
+=======
+import { OrdersService } from '../orders.service';
+import { Router } from '@angular/router';
+import { logout } from '../../utils';
+
+>>>>>>> b852811d2bb34b842bd40f7f3067373baa923812
 
 @Component({
   selector: 'app-tab-personal-information',
@@ -17,7 +24,7 @@ export class TabPersonalInformationComponent implements OnInit {
   customer: any;
   customerId: number;
 
-  constructor(private ordersService: OrdersService) {
+  constructor(private ordersService: OrdersService, private router: Router) {
     this.customerId = parseInt(localStorage.getItem('customerIdKanala'));
 
     this.form1 = new FormGroup({
@@ -71,6 +78,10 @@ export class TabPersonalInformationComponent implements OnInit {
 
   onSubmit3() {
     // Llamara al serivicio que hara la peticion put/patch
+  }
+
+  handleLogout() {
+    logout(this.router);
   }
 
 }

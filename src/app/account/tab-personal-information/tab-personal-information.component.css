@@ -38,7 +38,7 @@
 .flexForms form p{
     width: 80%;
     margin: .5em auto;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .flexForms form input.submit{
@@ -48,4 +48,8 @@
     text-decoration: underline;
     text-align: right;
     color: black;
+}
+
+.logout:hover{
+    text-decoration: underline;
 }
