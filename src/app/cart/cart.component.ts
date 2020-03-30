@@ -16,7 +16,7 @@ export class CartComponent implements OnInit {
   }
 
   decrementQuantity(sku) {
-    const prod = this.cart.find(item => item.sku === sku);
+    const prod: any = this.cart.find(item => item['sku'] === sku);
     if (prod.quantity !== 0) {
       prod.quantity = prod.quantity - 1;
     }
@@ -27,13 +27,13 @@ export class CartComponent implements OnInit {
   }
 
   incrementQuantity(sku) {
-    const prod = this.cart.find(item => item.sku === sku);
+    const prod: any = this.cart.find(item => item['sku'] === sku);
     prod.quantity = prod.quantity + 1;
     localStorage.setItem('cart', JSON.stringify(this.cart));
   }
 
   deleteItemFromCart(sku) {
-    const pos = this.cart.findIndex(item => item.sku === sku);
+    const pos = this.cart.findIndex(item => item['sku'] === sku);
     this.cart.splice(pos, 1);
     localStorage.setItem('cart', JSON.stringify(this.cart));
   }
@@ -41,7 +41,7 @@ export class CartComponent implements OnInit {
   calculateTotal() {
     let total = 0;
     for (const item of this.cart) {
-      total += item.price * item.quantity;
+      total += item['price'] * item['quantity'];
     }
     return total;
   }
