@@ -6,17 +6,19 @@
     </div>
     <div class="description">
         <h1>{{product.product[0].title}}</h1>
-        <p>{{product.product[0].price}} €</p>
+        <h2>{{product.product[0].price}} €</h2>
         <p>{{product.product[0].description}}</p>
-        <label>SELECT NUMBER</label>
-        <select>
-            <option *ngFor="let item of product.sizes" value={{item.number}}>{{item.number}} -- {{item.quantity}} units
-                left
-            </option>
-        </select>
-        <div>
-            <button>ADD TO CART</button>
+        <div class="sizes">
+            <label>SELECT YOUR NUMBER</label>
+            <select (change)="handleSelectSize($event)">
+                <option value="" selected>Select your number</option>
+                <option *ngFor="let item of product.sizes" value={{item.number}}>{{item.number}} -- {{item.quantity}}
+                    units left
+                </option>
+            </select>
         </div>
-
+        <div class="addToCart">
+            <button (click)="handleAddToCart(product.product[0].sku, size)">ADD TO CART</button>
+        </div>
     </div>
 </div>

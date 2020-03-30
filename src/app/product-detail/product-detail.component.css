@@ -6,10 +6,71 @@
 }
 
 .images {
-    width: 50%;
+    width: 40%;
 }
 
 .description {
-    width: 50%;
+    width: 40%;
     text-align: center;
+    position: fixed;
+    right: 0;
+    padding-top: 50px;
+    padding-right: 200px;
+}
+
+.description h1 {
+    font-family: "Arial-Black" ,sans-serif;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fb3737;
+    letter-spacing: .04px;
+    text-transform: uppercase;
+    font-size: 40px;
+    margin: 1em 0;
+}
+
+.description h2 {
+    font-size: 30px;
+    margin: 1em 0;
+}
+
+.description p {
+    line-height: 1.6;
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+.sizes {
+    display: flex;
+    justify-content: space-around;
+    margin: 2em 0;
+}
+
+.sizes label {
+    width: 30%;
+}
+.sizes select {
+    width: 30%;  
+}
+
+.description .addToCart {
+    display: flex;
+    height: 100px;
+}
+
+.description .addToCart button {
+    width: 100%;
+    margin: 2% 10%;
+    font-size: 20px;
+    border: 1px solid red;
+    font-family: "Arial-Black" ,sans-serif;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fb3737;
+}
+
+.description .addToCart button:hover {
+    background-color: red;
+    color: white;
+    cursor: pointer;
 }
