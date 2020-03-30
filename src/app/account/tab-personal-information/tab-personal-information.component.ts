@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-tab-personal-information',
@@ -7,7 +8,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabPersonalInformationComponent implements OnInit {
 
-  constructor() { }
+  form1: FormGroup;
+  form2: FormGroup;
+  form3: FormGroup;
+
+  constructor() {
+
+    this.form1 = new FormGroup({
+      email: new FormControl(),
+      password: new FormControl(),
+      passwordRepeat: new FormControl()
+    });
+
+    this.form2 = new FormGroup({
+      name: new FormControl(),
+      lastName: new FormControl(),
+      address: new FormControl(),
+      city: new FormControl(),
+      region: new FormControl(),
+      postcode: new FormControl(),
+      country: new FormControl(),
+      phone: new FormControl(),
+    });
+
+    this.form3 = new FormGroup({
+      name: new FormControl(),
+      lastName: new FormControl(),
+      address: new FormControl(),
+      city: new FormControl(),
+      region: new FormControl(),
+      postcode: new FormControl(),
+      country: new FormControl(),
+      phone: new FormControl(),
+    })
+  }
 
   ngOnInit() {
   }

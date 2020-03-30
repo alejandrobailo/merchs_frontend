@@ -12,7 +12,12 @@ export class OrdersService {
     this.baseUrl = this.baseUrl = 'http://localhost:3000/api/orders';
   }
 
-  getAll(): Promise<any[]> {
-    return this.httpClient.get<any[]>(this.baseUrl).toPromise();
+  getAll(id): Promise<any[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.httpClient.post<any[]>(this.baseUrl, { customerId: id }, httpOptions).toPromise();
   }
 }

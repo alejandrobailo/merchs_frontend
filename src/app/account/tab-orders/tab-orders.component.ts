@@ -9,11 +9,14 @@ import { OrdersService } from '../orders.service';
 export class TabOrdersComponent implements OnInit {
 
   arrOrders: any[];
+  customerId: number;
 
-  constructor(private ordersService: OrdersService) { }
+  constructor(private ordersService: OrdersService) {
+    this.customerId = 4
+  }
 
   ngOnInit() {
-    this.ordersService.getAll()
+    this.ordersService.getAll(this.customerId)
       .then(response => {
         this.arrOrders = response;
         console.log(this.arrOrders);

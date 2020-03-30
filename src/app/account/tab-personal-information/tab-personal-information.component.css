@@ -41,7 +41,9 @@
 }
 
 .flexForms form input.submit{
+    display: inline;
+    font-size: 14px;
     border: none;
-    border-bottom: 2px solid black;
-    width: 20%;
+    text-decoration: underline;
+    text-align: right;
 }

@@ -1,18 +1,36 @@
 <div class="flexForms">
-    <form>
+    <form [formGroup]="form1" (ngSubmit)="onSubmit()">
         <h3>ACCOUNT DETAILS</h3>
-        <input type="email" placeholder="Aqui ira el email del usuario">
+        <input type="email" placeholder="Aqui ira el email del usuario" formControlName="email">
         <h3>RESET PASSWORD</h3>
-        <input type="password" name="" id="" placeholder="New password">
-        <input type="password" name="" id="" placeholder="Repeat password">
+        <input type="password" name="" id="" placeholder="New password" formControlName="password">
+        <input type="password" name="" id="" placeholder="Repeat password" formControlName="passwordRepeat">
         <p>Logged in as variable con el email.</p>
         <p>Not you? logout</p>
-        <input class="submit" type="submit" value="SUBMIT">
+        <input class="submit" type="submit" value="SUBMIT" [disabled]=!form1.valid>
     </form>
-    <form>
+    <form [formGroup]="form2" (ngSubmit)="onSubmit()">
         <h3>DELIVERY ADDRESS</h3>
+        <input type="text" placeholder="Name" formControlName="name">
+        <input type="text" placeholder="Last name" formControlName="lastName">
+        <input type="text" placeholder="Address" formControlName="address">
+        <input type="text" placeholder="City" formControlName="city">
+        <input type="text" placeholder="Region" formControlName="region">
+        <input type="text" placeholder="Post code" formControlName="postcode">
+        <input type="text" placeholder="Country" formControlName="country">
+        <input type="tel" placeholder="Phone" formControlName="phone">
+        <input class="submit" type="submit" value="SUBMIT" [disabled]=!form2.valid>
     </form>
-    <form>
+    <form [formGroup]="form3" (ngSubmit)="onSubmit()">
         <h3>BILLING ADDRESS</h3>
+        <input type="text" placeholder="Name" formControlName="name">
+        <input type="text" placeholder="Last name" formControlName="lastName">
+        <input type="text" placeholder="Address" formControlName="address">
+        <input type="text" placeholder="City" formControlName="city">
+        <input type="text" placeholder="Region" formControlName="region">
+        <input type="text" placeholder="Post code" formControlName="postcode">
+        <input type="text" placeholder="Country" formControlName="country">
+        <input type="tel" placeholder="Phone" formControlName="phone">
+        <input class="submit" type="submit" value="SUBMIT" [disabled]=!form3.valid>
     </form>
 </div>
