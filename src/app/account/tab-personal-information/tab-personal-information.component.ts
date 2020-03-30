@@ -18,7 +18,7 @@ export class TabPersonalInformationComponent implements OnInit {
   customerId: number;
 
   constructor(private ordersService: OrdersService) {
-    this.customerId = 4
+    this.customerId = parseInt(localStorage.getItem('customerIdKanala'));
 
     this.form1 = new FormGroup({
       email: new FormControl(),
