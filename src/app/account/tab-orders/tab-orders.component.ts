@@ -12,7 +12,7 @@ export class TabOrdersComponent implements OnInit {
   customerId: number;
 
   constructor(private ordersService: OrdersService) {
-    this.customerId = 4
+    this.customerId = parseInt(localStorage.getItem('customerIdKanala'));
   }
 
   ngOnInit() {

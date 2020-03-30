@@ -1,7 +1,7 @@
 <div class="topWrapper">
     <nav class="navWrapper">
         <li class="navItem">
-            <button class="navButton">ALL</button>
+            <button class="navButton" [routerLink]="['/']">ALL</button>
             <!-- <button class="navButton" mat-button [matMenuTriggerFor]="menu">ALL</button>
             <mat-menu #menu="matMenu">
                 <button mat-menu-item>Item 1</button>
@@ -26,7 +26,7 @@
         </li>
     </nav>
     <li class="navItem navLogo">
-        <a href="#">
+        <a [routerLink]="['/']">
             <img class="logo" src="../../assets/images/logo-transparent.png" alt="LOGO">
         </a>
     </li>

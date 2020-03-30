@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,7 +42,8 @@ import { LoginComponent } from './login/login.component';
     MatMenuModule,
     MatGridListModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot([])
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

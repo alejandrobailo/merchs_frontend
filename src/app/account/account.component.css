@@ -5,7 +5,7 @@
 
 .wrapper::before{
     display: block;
-    height: 120px;
+    height: 150px;
     content: "";
 }
 
@@ -15,12 +15,21 @@
 }
 
 .logout{
+    position: relative;
     text-decoration: none;
     color: black;
     border: 1px solid black;
     padding: 4px 20px;
-    font-size: 12px;
+    font-size: 14px;
     float: right;
+    z-index: 9999;
+    transition: all .4s;
+}
+
+.logout:hover{
+    background-color: #fb3737;
+    border: 1px solid #fb3737;
+    color: white;
 }
 
 .header{
