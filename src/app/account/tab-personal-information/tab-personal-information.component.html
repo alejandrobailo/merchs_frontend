@@ -6,7 +6,7 @@
         <input type="password" name="" id="" placeholder="New password" formControlName="password">
         <input type="password" name="" id="" placeholder="Repeat password" formControlName="passwordRepeat">
         <p>Logged in as {{customer?.email}}</p>
-        <p>Not you? <a href="">logout</a></p>
+        <p>Not you? <a class="logout" (click)="handleLogout()">logout</a></p>
         <input class="submit" type="submit" value="SUBMIT" [disabled]=!form1.valid>
     </form>
     <form [formGroup]="form2" (ngSubmit)="onSubmit2()">

@@ -3,8 +3,8 @@
         <div class="login">
             <h2>REGISTERED CUSTOMERS</h2>
             <form [formGroup]="formLogin" (ngSubmit)="submitLogin()">
-                <input type="email" formControlName="email">
-                <input type="password" formControlName="password">
+                <input type="email" formControlName="email" placeholder="Insert your email">
+                <input type="password" formControlName="password" placeholder="Insert your password">
                 <input type="submit" value="LOG IN" class="submitLogin">
                 <a href="">Forget password?</a>
             </form>
@@ -15,8 +15,9 @@
                 <input type="email" formControlName="email">
                 <input type="password" formControlName="password">
                 <input type="password" formControlName="passwordRepeat">
-                <input type="submit" value="RESGISTER">
+                <input type="submit" value="REGISTER" class="submitRegister">
             </form>
+            <p>OR LOGIN WITH</p>
         </div>
     </div>
 </div>
