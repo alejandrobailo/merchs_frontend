@@ -1,6 +1,15 @@
 .ordersTable{
     display: flex;
-    width: 100%;
-    justify-content: space-evenly;
+    width: 90%;
+    justify-content: space-between;
     margin: 3em;
+}
+
+.tableTitle{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.ordersTable p{
+    margin-top: 1em;
 }

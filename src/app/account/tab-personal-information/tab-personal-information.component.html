@@ -1,36 +1,36 @@
 <div class="flexForms">
-    <form [formGroup]="form1" (ngSubmit)="onSubmit()">
+    <form [formGroup]="form1" (ngSubmit)="onSubmit1()">
         <h3>ACCOUNT DETAILS</h3>
-        <input type="email" placeholder="Aqui ira el email del usuario" formControlName="email">
+        <input type="email" [placeholder]="customer?.email" formControlName="email" [value]="customer?.email">
         <h3>RESET PASSWORD</h3>
         <input type="password" name="" id="" placeholder="New password" formControlName="password">
         <input type="password" name="" id="" placeholder="Repeat password" formControlName="passwordRepeat">
-        <p>Logged in as variable con el email.</p>
-        <p>Not you? logout</p>
+        <p>Logged in as {{customer?.email}}</p>
+        <p>Not you? <a href="">logout</a></p>
         <input class="submit" type="submit" value="SUBMIT" [disabled]=!form1.valid>
     </form>
-    <form [formGroup]="form2" (ngSubmit)="onSubmit()">
+    <form [formGroup]="form2" (ngSubmit)="onSubmit2()">
         <h3>DELIVERY ADDRESS</h3>
-        <input type="text" placeholder="Name" formControlName="name">
-        <input type="text" placeholder="Last name" formControlName="lastName">
-        <input type="text" placeholder="Address" formControlName="address">
-        <input type="text" placeholder="City" formControlName="city">
-        <input type="text" placeholder="Region" formControlName="region">
-        <input type="text" placeholder="Post code" formControlName="postcode">
-        <input type="text" placeholder="Country" formControlName="country">
-        <input type="tel" placeholder="Phone" formControlName="phone">
+        <input type="text" [placeholder]="customer?.first_name" formControlName="name" [value]="customer?.first_name">
+        <input type="text" [placeholder]="customer?.last_name" formControlName="lastName" [value]="customer?.last_name">
+        <input type="text" [placeholder]="customer?.address" formControlName="address" [value]="customer?.address">
+        <input type="text" [placeholder]="customer?.city" formControlName="city" [value]="customer?.city">
+        <input type="text" [placeholder]="customer?.region" formControlName="region" [value]="customer?.region">
+        <input type="text" [placeholder]="customer?.postcode" formControlName="postcode" [value]="customer?.postcode">
+        <input type="text" [placeholder]="customer?.country" formControlName="country" [value]="customer?.country">
+        <input type="tel" [placeholder]="customer?.phone" formControlName="phone" [placeholder]="customer?.phone">
         <input class="submit" type="submit" value="SUBMIT" [disabled]=!form2.valid>
     </form>
-    <form [formGroup]="form3" (ngSubmit)="onSubmit()">
+    <form [formGroup]="form3" (ngSubmit)="onSubmit3()">
         <h3>BILLING ADDRESS</h3>
-        <input type="text" placeholder="Name" formControlName="name">
-        <input type="text" placeholder="Last name" formControlName="lastName">
-        <input type="text" placeholder="Address" formControlName="address">
-        <input type="text" placeholder="City" formControlName="city">
-        <input type="text" placeholder="Region" formControlName="region">
-        <input type="text" placeholder="Post code" formControlName="postcode">
-        <input type="text" placeholder="Country" formControlName="country">
-        <input type="tel" placeholder="Phone" formControlName="phone">
+        <input type="text" [placeholder]="customer?.first_name" formControlName="name" [value]="customer?.first_name">
+        <input type="text" [placeholder]="customer?.last_name" formControlName="lastName" [value]="customer?.last_name">
+        <input type="text" [placeholder]="customer?.address" formControlName="address" [value]="customer?.address">
+        <input type="text" [placeholder]="customer?.city" formControlName="city" [value]="customer?.city">
+        <input type="text" [placeholder]="customer?.region" formControlName="region" [value]="customer?.region">
+        <input type="text" [placeholder]="customer?.postcode" formControlName="postcode" [value]="customer?.postcode">
+        <input type="text" [placeholder]="customer?.country" formControlName="country" [value]="customer?.country">
+        <input type="tel" [placeholder]="customer?.phone" formControlName="phone" [placeholder]="customer?.phone">
         <input class="submit" type="submit" value="SUBMIT" [disabled]=!form3.valid>
     </form>
 </div>

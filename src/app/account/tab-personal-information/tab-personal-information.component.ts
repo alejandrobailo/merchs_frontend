@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { OrdersService } from '../orders.service';
 
 @Component({
   selector: 'app-tab-personal-information',
@@ -12,7 +13,12 @@ export class TabPersonalInformationComponent implements OnInit {
   form2: FormGroup;
   form3: FormGroup;
 
-  constructor() {
+  arrCustomers: any[];
+  customer: any;
+  customerId: number;
+
+  constructor(private ordersService: OrdersService) {
+    this.customerId = 4
 
     this.form1 = new FormGroup({
       email: new FormControl(),
@@ -44,6 +50,27 @@ export class TabPersonalInformationComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.ordersService.getAll(this.customerId)
+      .then(response => {
+        this.arrCustomers = response;
+        console.log(this.arrCustomers);
+        this.customer = this.arrCustomers["customer"][0];
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  onSubmit1() {
+    // Llamara al serivicio que hara la peticion put/patch
+  }
+
+  onSubmit2() {
+    // Llamara al serivicio que hara la peticion put/patch
+  }
+
+  onSubmit3() {
+    // Llamara al serivicio que hara la peticion put/patch
   }
 
 }
