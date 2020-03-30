@@ -16,6 +16,7 @@ export class CartComponent implements OnInit {
 
   async ngOnInit() {
     this.cart = JSON.parse(localStorage.getItem('cart'));
+    console.log(this.cart);
   }
 
   decrementQuantity(sku) {

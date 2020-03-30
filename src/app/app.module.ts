@@ -13,7 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductService } from './product.service';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { PrincipalComponent } from './principal/principal.component';
-import { DetailComponent } from './detail/detail.component';
 import { AccountComponent } from './account/account.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { TabPersonalInformationComponent } from './account/tab-personal-information/tab-personal-information.component';
@@ -26,7 +25,6 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     TopNavComponent,
     PrincipalComponent,
-    DetailComponent,
     AccountComponent,
     ProductDetailComponent,
     TabPersonalInformationComponent,
