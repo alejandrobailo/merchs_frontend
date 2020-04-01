@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product.service';
 import { OrdersService } from '../orders.service';
 import { Router } from '@angular/router';
 
@@ -10,17 +9,20 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
 
-  cart: [];
+  cart: any[];
 
-  constructor(private productService: ProductService, private orderService: OrdersService, private router: Router) { }
+  constructor(private orderService: OrdersService, private router: Router) { }
 
-  async ngOnInit() {
+  ngOnInit() {
     this.cart = JSON.parse(localStorage.getItem('cart'));
-    console.log(this.cart);
+    if (this.cart[0].customerId === null) {
+      this.cart[0].customerId = JSON.parse(localStorage.getItem('customerIdKanala'));
+    }
+    localStorage.setItem('cart', JSON.stringify(this.cart));
   }
 
   decrementQuantity(sku) {
-    const prod: any = this.cart.find(item => item['sku'] === sku);
+    const prod: any = this.cart.find(item => item.sku === sku);
     if (prod.quantity !== 0) {
       prod.quantity = prod.quantity - 1;
     }
@@ -31,14 +33,14 @@ export class CartComponent implements OnInit {
   }
 
   incrementQuantity(sku) {
-    const prod: any = this.cart.find(item => item['sku'] === sku);
+    const prod: any = this.cart.find(item => item.sku === sku);
     // Habría que poner un tope de unidades máximas pero el getAll de la API no trae las cantidades de cada número. Mejorarlo cuand tengamos tiempo.
     prod.quantity = prod.quantity + 1;
     localStorage.setItem('cart', JSON.stringify(this.cart));
   }
 
   deleteItemFromCart(sku) {
-    const pos = this.cart.findIndex(item => item['sku'] === sku);
+    const pos = this.cart.findIndex(item => item.sku === sku);
     this.cart.splice(pos, 1);
     localStorage.setItem('cart', JSON.stringify(this.cart));
   }
@@ -46,7 +48,7 @@ export class CartComponent implements OnInit {
   calculateTotal() {
     let total = 0;
     for (const item of this.cart) {
-      total += item['price'] * item['quantity'];
+      total += item.price * item.quantity;
     }
     return total;
   }

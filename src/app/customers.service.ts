@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -9,14 +9,15 @@ export class CustomersService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/login'
+    this.baseUrl = 'http://localhost:3000/api/login';
   }
 
   /*   registro(formValues): Promise<any> {
       return this.httpClient.post(`${this.baseUrl}/register`, formValues).toPromise();
     };
    */
+
   login(formValues): Promise<any> {
     return this.httpClient.post(`${this.baseUrl}`, formValues).toPromise();
-  };
+  }
 }

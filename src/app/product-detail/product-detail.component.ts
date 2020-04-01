@@ -27,7 +27,7 @@ export class ProductDetailComponent implements OnInit {
 
   handleAddToCart(pSku, pSize) {
     const newCartItem = {
-      customerId: localStorage.getItem('customerIdKanala'),
+      customerId: JSON.parse(localStorage.getItem('customerIdKanala')),
       sku: pSku,
       size: pSize,
       quantity: 1,
@@ -35,14 +35,13 @@ export class ProductDetailComponent implements OnInit {
       title: this.product.product[0].title,
       image: `http://localhost:3000${this.product.product[0].image_1}`
     };
-    if (localStorage.getItem('cart') === null) {
-      this.cart.push(newCartItem);
-      localStorage.setItem('cart', JSON.stringify(this.cart));
-    } else {
+
+    if (localStorage.getItem('cart') !== null) {
       this.cart = JSON.parse(localStorage.getItem('cart'));
-      this.cart.push(newCartItem);
-      localStorage.setItem('cart', JSON.stringify(this.cart));
     }
+    this.cart.push(newCartItem);
+    localStorage.setItem('cart', JSON.stringify(this.cart));
+
     this.router.navigate(['/cart']);
   }
 

@@ -14,16 +14,12 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: 'account', component: AccountComponent, canActivate: [LoginGuard], children: [
-      {
-        path: 'tab-orders', component: TabOrdersComponent,
-      },
-      {
-        path: 'tab-personal-information', component: TabPersonalInformationComponent,
-      }
+      { path: 'tab-orders', component: TabOrdersComponent },
+      { path: 'tab-personal-information', component: TabPersonalInformationComponent }
     ]
   },
   { path: 'product/:id', component: ProductDetailComponent },
-  { path: 'cart', component: CartComponent }
+  { path: 'cart', component: CartComponent, canActivate: [LoginGuard] }
 ];
 
 @NgModule({

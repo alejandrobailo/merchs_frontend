@@ -18,13 +18,13 @@ export class LoginComponent implements OnInit {
     this.formLogin = new FormGroup({
       email: new FormControl(),
       password: new FormControl()
-    })
+    });
 
     this.formRegister = new FormGroup({
       email: new FormControl(),
       password: new FormControl(),
       passwordRepeat: new FormControl(),
-    })
+    });
   }
 
   ngOnInit() {
@@ -33,14 +33,18 @@ export class LoginComponent implements OnInit {
   async submitLogin() {
     try {
       localStorage.removeItem('token');
-      localStorage.removeItem('customerIdKanala')
+      localStorage.removeItem('customerIdKanala');
 
       const result = await this.customersService.login(this.formLogin.value);
 
       localStorage.setItem('token', result.success);
-      localStorage.setItem('customerIdKanala', result.customerId)
+      localStorage.setItem('customerIdKanala', result.customerId);
 
-      this.router.navigate(['/'])
+      if (localStorage.getItem('cart') === null) {
+        this.router.navigate(['/']);
+      } else {
+        this.router.navigate(['/cart']);
+      }
     } catch (error) {
       console.log(error.error);
     }

@@ -52,6 +52,7 @@
     background-color: #ccc;
     border-radius: 10px;
     color: white;
+    margin: 0px 10px;
 }
 
 .quantity button:hover {
@@ -59,7 +60,7 @@
 }
 
 .quantityInput {
-    width: 30px;
+    width: 40px;
     border: none;
     font-size: 20px;
     padding: 0px 10px;
@@ -81,6 +82,7 @@
     color: white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #fb3737;
+    margin-right: 30px;
 }
 
 .checkout button:hover {
