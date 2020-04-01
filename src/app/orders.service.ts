@@ -21,15 +21,21 @@ export class OrdersService {
     return this.httpClient.post<any[]>(this.baseUrl, { customerId: id }, httpOptions).toPromise();
   }
 
-  createOrder(order): Promise<any> {
+  createOrder(cart): Promise<any> {
     const body = {
-      customerId: order[0].customerId,
       order_status: 'completed',
-      // Habría que pasarle todas las tallas de todos los productos y sus cantidades, pero como no me da la olla, le paso solamente el primero, por tanto solo crea un pedido del primer producto que haya en el carrito
-      sku: order[0].sku,
-      size: order[0].size,
-      quantity: order[0].quantity
+      customerId: cart[0].customerId,
+      totalAmount: cart.totalAmount
     };
     return this.httpClient.post(`${this.baseUrl}/new`, body).toPromise();
+  }
+
+  createOrderItem(cartItem): Promise<any> {
+    const body = {
+      sku: cartItem.sku,
+      size: cartItem.size,
+      quantityToSubstract: cartItem.quantity
+    };
+    return this.httpClient.post(`${this.baseUrl}/new/items`, body).toPromise();
   }
 }

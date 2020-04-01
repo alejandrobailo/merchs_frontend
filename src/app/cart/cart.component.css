@@ -81,7 +81,7 @@
 
 .checkout button {
     width: 30%;
-    margin-top: 50px;
+    margin: 80px 0px;
     font-size: 20px;
     border: 1px solid red;
     font-family: "Arial-Black" ,sans-serif;
@@ -89,6 +89,7 @@
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #fb3737;
     margin-right: 30px;
+    height: 80px;
 }
 
 .checkout button:hover {

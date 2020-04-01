@@ -4,7 +4,7 @@
     </div>
     <div class="items" *ngFor="let item of cart">
         <div class="delete">
-            <button class="delete-btn" (click)="deleteItemFromCart(item.sku)"><span
+            <button class="delete-btn" (click)="deleteItemFromCart(item.sku, item.size)"><span
                     class="material-icons">clear</span></button>
         </div>
 
@@ -26,12 +26,12 @@
 
         <div class="quantity">
             <div class="btn-wrapper">
-                <button class="minus-btn" (click)="decrementQuantity(item.sku)"><span
+                <button class="minus-btn" (click)="decrementQuantity(item.sku, item.size)"><span
                         class="material-icons">remove</span></button>
             </div>
             <input type="text" class="quantityInput" value={{item.quantity}}>
             <div class="btn-wrapper">
-                <button class="plus-btn" (click)="incrementQuantity(item.sku)"
+                <button class="plus-btn" (click)="incrementQuantity(item.sku, item.size)"
                     [ngClass]="{'maxReached': classMaxReached}"><span class="material-icons">add</span></button>
             </div>
         </div>
@@ -44,7 +44,7 @@
     </div>
 
     <div class="checkout">
-        <button (click)="generateOrder()">GENERATE ORDER</button>
+        <button (click)="generateOrder()" *ngIf="!isCartEmpty()">GENERATE ORDER</button>
         <button [routerLink]="['/']">CONTINUE SHOPPING</button>
     </div>
 </div>

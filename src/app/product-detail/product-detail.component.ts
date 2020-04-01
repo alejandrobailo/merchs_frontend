@@ -12,17 +12,27 @@ export class ProductDetailComponent implements OnInit {
   product: any;
   size: number;
   cart = [];
+  classSizeSelected: boolean;
+  alreadyInCart: boolean;
 
   constructor(private productService: ProductService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.classSizeSelected = false;
+    this.alreadyInCart = false;
     this.activatedRoute.params.subscribe(async params => {
       this.product = await this.productService.getById(parseInt(params.id, 10));
     });
   }
 
   handleSelectSize(event) {
-    return this.size = event.target.value;
+    // Para obligar a seleccionar una talla, sino no se puede añadir al carrito
+    if (event.target.value !== 'not-valid') {
+      this.classSizeSelected = true;
+      this.size = event.target.value;
+    } else {
+      this.classSizeSelected = false;
+    }
   }
 
   handleAddToCart(pSku, pSize) {
@@ -39,9 +49,16 @@ export class ProductDetailComponent implements OnInit {
     if (localStorage.getItem('cart') !== null) {
       this.cart = JSON.parse(localStorage.getItem('cart'));
     }
+
+    // Compruebo si el producto ya está en el carrito para no dejar añadirlo otra vez
+    for (const item of this.cart) {
+      if (item.sku === pSku && item.size === pSize) {
+        return this.alreadyInCart = true;
+      }
+    }
+
     this.cart.push(newCartItem);
     localStorage.setItem('cart', JSON.stringify(this.cart));
-
     this.router.navigate(['/cart']);
   }
 

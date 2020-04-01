@@ -11,14 +11,15 @@
         <div class="sizes">
             <label>SELECT YOUR NUMBER</label>
             <select (change)="handleSelectSize($event)">
-                <option value="" selected>Select your number</option>
+                <option value="not-valid" selected>Select your number</option>
                 <option *ngFor="let item of product?.sizes" value={{item?.number}}>{{item.number}} -- {{item.quantity}}
                     units left
                 </option>
             </select>
         </div>
-        <div class="addToCart">
-            <button (click)="handleAddToCart(product?.product[0].sku, size)">ADD TO CART</button>
+        <div class="addToCart" [ngClass]="{'sizeSelected': !classSizeSelected}">
+            <button class="btn-addToCart" (click)="handleAddToCart(product?.product[0].sku, size)">ADD TO CART</button>
         </div>
+        <p *ngIf="alreadyInCart">Item already in your cart!</p>
     </div>
 </div>
