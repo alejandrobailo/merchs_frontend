@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from '../orders.service';
 import { Router } from '@angular/router';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-cart',
@@ -10,8 +11,13 @@ import { Router } from '@angular/router';
 export class CartComponent implements OnInit {
 
   cart: any[];
+  prod: any;
+  prodFromDB: any;
+  classMaxReached: boolean;
 
-  constructor(private orderService: OrdersService, private router: Router) { }
+  constructor(private orderService: OrdersService, private productService: ProductService, private router: Router) {
+    this.classMaxReached = false;
+  }
 
   ngOnInit() {
     this.cart = JSON.parse(localStorage.getItem('cart'));
@@ -22,21 +28,28 @@ export class CartComponent implements OnInit {
   }
 
   decrementQuantity(sku) {
-    const prod: any = this.cart.find(item => item.sku === sku);
-    if (prod.quantity !== 0) {
-      prod.quantity = prod.quantity - 1;
+    this.prod = this.cart.find(item => item.sku === sku);
+    if (this.prod.quantity !== 0) {
+      this.prod.quantity = this.prod.quantity - 1;
     }
-    if (prod.quantity === 0) {
+    if (this.prod.quantity === 0) {
       this.deleteItemFromCart(sku);
     }
     localStorage.setItem('cart', JSON.stringify(this.cart));
+    this.classMaxReached = false;
   }
 
-  incrementQuantity(sku) {
-    const prod: any = this.cart.find(item => item.sku === sku);
-    // Habría que poner un tope de unidades máximas pero el getAll de la API no trae las cantidades de cada número. Mejorarlo cuand tengamos tiempo.
-    prod.quantity = prod.quantity + 1;
+  async incrementQuantity(sku) {
+    this.prod = this.cart.find(item => item.sku === sku);
+    this.prodFromDB = await this.productService.getById(sku);
+    const maxQuantityPerSize = this.prodFromDB.sizes.find(item => item.number === parseInt((this.prod.size), 10));
+
+    this.prod.quantity = this.prod.quantity + 1;
     localStorage.setItem('cart', JSON.stringify(this.cart));
+
+    if (this.prod.quantity >= maxQuantityPerSize.quantity) {
+      this.classMaxReached = true;
+    }
   }
 
   deleteItemFromCart(sku) {

@@ -25,11 +25,15 @@
         </div>
 
         <div class="quantity">
-            <button class="minus-btn" (click)="decrementQuantity(item.sku)"><span
-                    class="material-icons">remove</span></button>
+            <div class="btn-wrapper">
+                <button class="minus-btn" (click)="decrementQuantity(item.sku)"><span
+                        class="material-icons">remove</span></button>
+            </div>
             <input type="text" class="quantityInput" value={{item.quantity}}>
-            <button class="plus-btn" (click)="incrementQuantity(item.sku)"><span
-                    class="material-icons">add</span></button>
+            <div class="btn-wrapper">
+                <button class="plus-btn" (click)="incrementQuantity(item.sku)"
+                    [ngClass]="{'maxReached': classMaxReached}"><span class="material-icons">add</span></button>
+            </div>
         </div>
 
         <div class="subtotal">{{item.price * item.quantity}} €</div>

@@ -47,23 +47,29 @@
     color: red;
 }
 
+.quantity {
+    display: flex;
+}
+
 .quantity button {
     border: none;
     background-color: #ccc;
-    border-radius: 10px;
+    border-radius: 5px;
     color: white;
-    margin: 0px 10px;
+    outline: none;
+    width: 100%;
 }
 
 .quantity button:hover {
     cursor: pointer;
+    background-color: red;
 }
 
 .quantityInput {
-    width: 40px;
     border: none;
     font-size: 20px;
-    padding: 0px 10px;
+    text-align: center;
+    width: 50px;
 }
 
 .total {
@@ -89,4 +95,12 @@
     background-color: red;
     color: white;
     cursor: pointer;
+}
+
+.maxReached {
+    pointer-events: none;
+}
+
+.btn-wrapper{
+    cursor: not-allowed;
 }
