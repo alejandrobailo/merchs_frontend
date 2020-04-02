@@ -26,12 +26,15 @@ export class ProductDetailComponent implements OnInit {
   }
 
   handleSelectSize(event) {
-    // Para obligar a seleccionar una talla, sino no se puede añadir al carrito
-    if (event.target.value !== 'not-valid') {
+    // Selecciono la cantidad de la talla que ha elegido el usuario
+    const quantitySizeSelected = this.product.sizes.find(item => item.number === parseInt(event.target.value, 10));
+
+    // Para obligar a seleccionar una talla y obligar a seleccionar una con al menos una talla disponible, sino no se puede añadir al carrito
+    if (event.target.value === 'not-valid' || quantitySizeSelected.quantity === 0) {
+      this.classSizeSelected = false;
+    } else {
       this.classSizeSelected = true;
       this.size = event.target.value;
-    } else {
-      this.classSizeSelected = false;
     }
   }
 

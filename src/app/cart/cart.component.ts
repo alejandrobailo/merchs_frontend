@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     this.cart = JSON.parse(localStorage.getItem('cart'));
 
-    // Añade el customerId al carrito, ya que el carrito se había creado antes de que el cliente estuviera logueado
+    // Añade el customerId al carrito, ya que puede que el carrito se haya creado antes de que el cliente estuviera logueado
     if (this.cart[0].customerId === null) {
       this.cart[0].customerId = JSON.parse(localStorage.getItem('customerIdKanala'));
     }
