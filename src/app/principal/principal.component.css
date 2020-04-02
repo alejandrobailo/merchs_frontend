@@ -47,7 +47,7 @@
     margin-bottom: 1em;
 }
 
-.btnAddToCart {
+.btnViewProduct {
     position: absolute;
     bottom: 1%;
     left: 1%;
@@ -57,4 +57,10 @@
     border-radius: 0;
     padding: 1em;
     background-color: transparent;
+}
+
+.btnViewProduct:hover {
+    cursor: pointer;
+    background-color: red;
+    color: white;
 }
