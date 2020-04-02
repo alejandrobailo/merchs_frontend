@@ -1,15 +1,8 @@
 .wrapper{
-    height: 100vh;
     background-color: white;
     width: 100%;
     margin: 0 auto;
 }
-
-/* .wrapper::before{
-    display: block;
-    height: 120px;
-    content: "";
-} */
 
 .flexWrapper{
     display: flex;
@@ -35,7 +28,7 @@ input{
 }
 
 h2{
-    margin-top: 300px;
+    margin-top: 170px;
     padding: 1em 2em;
     color: hsla(0,0%,100%,0);
     -webkit-text-stroke-width: 1px;
@@ -52,14 +45,11 @@ h2{
 }
 
 .login{
-    height: 100vh;
     width: 50%;
-    background-image: url(https://lebonnet.imgix.net/uploads/cq_pages/page_values/image_field_translation/value/317/en/ANG_Shot9-1557.jpg?auto=compress,format&w=1200);
-    background-size: cover;
+    background-color: lightgray;
 }
 
 .register{
-    height: 100vh;
     width: 50%;
 }
 
@@ -68,6 +58,7 @@ h2{
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .register form{
