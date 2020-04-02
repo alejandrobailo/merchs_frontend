@@ -1,7 +1,7 @@
 .wrapper{
     position: relative;
     height: 100vh;
-    background-image: url(https://lebonnet.imgix.net/uploads/cq_slider/slide/image/33/LB_desktop_slide1.jpg?auto=compress,format&w=2800);
+    background-image: url(https://www.etq-amsterdam.com/wp-content/uploads/2020/02/new-home-essense-1-e1580745362504-2500x0-c-default.jpg);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -36,13 +36,25 @@
 }
 
 .itemWrapper{
+    position: relative;
     border: 2px solid black;
     text-align: center;
     padding: 2em;
     margin: 1em;
 }
 
+.itemWrapper p{
+    margin-bottom: 1em;
+}
+
 .btnAddToCart {
-    color: red;
-    width: 100%;
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+    color: #fb3737;
+    width: 98%;
+    border: 2px solid #fb3737;
+    border-radius: 0;
+    padding: 1em;
+    background-color: transparent;
 }
